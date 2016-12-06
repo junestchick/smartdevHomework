@@ -53,8 +53,8 @@ class RegisterViewController: UIViewController {
     }
     
     fileprivate func isValidLoginInformation() -> Bool {
-        //Just check if email field is valid, username, password
-        //fullname and phone fields are empty or not
+        //Just check if email field is valid;
+        //username, password, fullname and phone fields are empty or not
         guard let username = usernameTextfield.text else { return false }
         guard let password = passwordTextField.text else { return false }
         guard let fullName = fullNameTextField.text else { return false }

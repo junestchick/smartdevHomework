@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class LoginViewController: UIViewController {
         loginFacebookButton.delegate = self
         usernameTextfield.delegate = self
         passwordTextField.delegate = self
+        loadingIndicator.isHidden = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
@@ -35,13 +37,19 @@ class LoginViewController: UIViewController {
 //MARK: Actions
     @IBAction func loginAction() {
         dismissKeyboard()
-        if isValidLoginInformation() {
-            // Login success
-            UIHelper.showAlert(withMessage: "Login successful!", inViewController: self)
-        } else {
-            // Lack of information
-            UIHelper.showAlert(withMessage: "Login failed. Please fill all the fields.", inViewController: self)
+        showLoading(show: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.showLoading(show: false)
+            if self.isValidLoginInformation() {
+                // Login success
+                self.cleanupInfor()
+                UIHelper.showAlert(withMessage: "Login successful!", inViewController: self)
+            } else {
+                // Lack of information
+                UIHelper.showAlert(withMessage: "Login failed. Please fill all the fields.", inViewController: self)
+            }
         }
+        
     }
     
     @IBAction func registerAction() {
@@ -61,6 +69,23 @@ class LoginViewController: UIViewController {
     
     func dismissKeyboard() {
         self.view.endEditing(true)
+    }
+    
+    fileprivate func cleanupInfor() {
+        usernameTextfield.text = ""
+        passwordTextField.text = ""
+    }
+    
+    fileprivate func showLoading(show: Bool) {
+        if show {
+            loginButton.isHidden = true
+            loadingIndicator.isHidden = false
+            loadingIndicator.startAnimating()
+        } else {
+            loginButton.isHidden = false
+            loadingIndicator.isHidden = true
+            loadingIndicator.stopAnimating()
+        }
     }
 }
 
@@ -94,9 +119,6 @@ extension LoginViewController: RegisterViewControllerDelegate {
     func didRegisterAccount(withUsername username: String, andPassword password: String) {
         usernameTextfield.text = username
         passwordTextField.text = password
-        //Delay 2 seconds
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
             self.loginAction()
-        }
     }
 }

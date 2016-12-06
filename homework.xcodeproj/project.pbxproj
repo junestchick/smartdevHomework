@@ -19,7 +19,6 @@
 		CD6E68151DF6782B0027BA07 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6E68131DF6782B0027BA07 /* LoginViewController.xib */; };
 		CD6E68171DF67EBD0027BA07 /* FacebookHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E68161DF67EBD0027BA07 /* FacebookHelper.swift */; };
 		CD8DDAC71DF6AB7200A077FE /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8DDAC61DF6AB7200A077FE /* UIHelper.swift */; };
-		CD8DDAC91DF6C0B800A077FE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8DDAC81DF6C0B800A077FE /* BaseNavigationController.swift */; };
 		E341085FDAB4FF0F03039196 /* Pods_homework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70661D638708DBAA83C4B189 /* Pods_homework.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		CD6E68131DF6782B0027BA07 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		CD6E68161DF67EBD0027BA07 /* FacebookHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookHelper.swift; sourceTree = "<group>"; };
 		CD8DDAC61DF6AB7200A077FE /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
-		CD8DDAC81DF6C0B800A077FE /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		CDBDC7AD1DF66950007A8EB2 /* homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDBC2947CDCC80D12379183D /* Pods-homework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-homework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-homework/Pods-homework.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,7 +88,6 @@
 			children = (
 				CD6E68161DF67EBD0027BA07 /* FacebookHelper.swift */,
 				CD8DDAC61DF6AB7200A077FE /* UIHelper.swift */,
-				CD8DDAC81DF6C0B800A077FE /* BaseNavigationController.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -313,7 +310,6 @@
 			files = (
 				CD6E68141DF6782B0027BA07 /* LoginViewController.swift in Sources */,
 				CD6E68171DF67EBD0027BA07 /* FacebookHelper.swift in Sources */,
-				CD8DDAC91DF6C0B800A077FE /* BaseNavigationController.swift in Sources */,
 				CD6E68101DF675700027BA07 /* RegisterViewController.swift in Sources */,
 				CD8DDAC71DF6AB7200A077FE /* UIHelper.swift in Sources */,
 				CD6E67FB1DF6725A0027BA07 /* AppDelegate.swift in Sources */,
