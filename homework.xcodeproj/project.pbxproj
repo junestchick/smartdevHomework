@@ -14,6 +14,10 @@
 		CD6E67FC1DF6725A0027BA07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD6E67F41DF6725A0027BA07 /* LaunchScreen.storyboard */; };
 		CD6E67FE1DF6725A0027BA07 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CD6E67F81DF6725A0027BA07 /* Info.plist */; };
 		CD6E67FF1DF6725A0027BA07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD6E67FA1DF6725A0027BA07 /* Assets.xcassets */; };
+		CD6E68101DF675700027BA07 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E680C1DF675700027BA07 /* RegisterViewController.swift */; };
+		CD6E68111DF675700027BA07 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6E680D1DF675700027BA07 /* RegisterViewController.xib */; };
+		CD6E68141DF6782B0027BA07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6E68121DF6782B0027BA07 /* LoginViewController.swift */; };
+		CD6E68151DF6782B0027BA07 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD6E68131DF6782B0027BA07 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		CD6E67F51DF6725A0027BA07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD6E67F81DF6725A0027BA07 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD6E67FA1DF6725A0027BA07 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD6E680C1DF675700027BA07 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		CD6E680D1DF675700027BA07 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		CD6E68121DF6782B0027BA07 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CD6E68131DF6782B0027BA07 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		CDBDC7AD1DF66950007A8EB2 /* homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -60,6 +68,8 @@
 		CD6E67E91DF670070027BA07 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CD6E68081DF675700027BA07 /* LoginViewController */,
+				CD6E680B1DF675700027BA07 /* RegisterViewController */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -97,6 +107,24 @@
 				CD6E67FA1DF6725A0027BA07 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CD6E68081DF675700027BA07 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CD6E68121DF6782B0027BA07 /* LoginViewController.swift */,
+				CD6E68131DF6782B0027BA07 /* LoginViewController.xib */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		CD6E680B1DF675700027BA07 /* RegisterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CD6E680C1DF675700027BA07 /* RegisterViewController.swift */,
+				CD6E680D1DF675700027BA07 /* RegisterViewController.xib */,
+			);
+			path = RegisterViewController;
 			sourceTree = "<group>";
 		};
 		CDBDC7A41DF6694F007A8EB2 = {
@@ -186,7 +214,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6E68151DF6782B0027BA07 /* LoginViewController.xib in Resources */,
 				CD6E67FC1DF6725A0027BA07 /* LaunchScreen.storyboard in Resources */,
+				CD6E68111DF675700027BA07 /* RegisterViewController.xib in Resources */,
 				CD6E67FE1DF6725A0027BA07 /* Info.plist in Resources */,
 				CD6E67FF1DF6725A0027BA07 /* Assets.xcassets in Resources */,
 			);
@@ -199,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD6E68141DF6782B0027BA07 /* LoginViewController.swift in Sources */,
+				CD6E68101DF675700027BA07 /* RegisterViewController.swift in Sources */,
 				CD6E67FB1DF6725A0027BA07 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,7 +348,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/homework/Frameworks",
 				);
-				INFOPLIST_FILE = homework/Info.plist;
+				INFOPLIST_FILE = homework/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = smartDev.homework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -332,7 +364,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/homework/Frameworks",
 				);
-				INFOPLIST_FILE = homework/Info.plist;
+				INFOPLIST_FILE = homework/Main/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = smartDev.homework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
