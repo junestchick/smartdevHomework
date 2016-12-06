@@ -29,7 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     fileprivate func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        let rootVC = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        let rootNV = UINavigationController(rootViewController: rootVC)
+        window?.rootViewController = rootNV
         window?.makeKeyAndVisible()
     }
     

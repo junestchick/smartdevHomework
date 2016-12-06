@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
 
 //MARK: Setup
     fileprivate func setupUIControls() {
+        self.title = "Login"
         loginFacebookButton.readPermissions = ["public_profile", "email", "user_friends"]
         loginFacebookButton.delegate = self
         usernameTextfield.delegate = self
@@ -36,15 +37,17 @@ class LoginViewController: UIViewController {
         dismissKeyboard()
         if isValidLoginInformation() {
             // Login success
-            showAlert(withMessage: "Login successful!")
+            UIHelper.showAlert(withMessage: "Login successful!", inViewController: self)
         } else {
             // Lack of information
-            showAlert(withMessage: "Login failed. Please fill all the fields.")
+            UIHelper.showAlert(withMessage: "Login failed. Please fill all the fields.", inViewController: self)
         }
     }
     
     @IBAction func registerAction() {
-        
+        dismissKeyboard()
+        let registerVC = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
 //MARK: Helpers
@@ -57,13 +60,6 @@ class LoginViewController: UIViewController {
     
     func dismissKeyboard() {
         self.view.endEditing(true)
-    }
-    
-    fileprivate func showAlert(withMessage message: String) {
-        let alertVC = UIAlertController(title: "SmartDev", message: message, preferredStyle: .alert)
-        let actionConfirm = UIAlertAction(title: "Close", style: .cancel, handler: nil)
-        alertVC.addAction(actionConfirm)
-        self.present(alertVC, animated: true, completion: nil)
     }
 }
 
@@ -81,13 +77,20 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController: FBSDKLoginButtonDelegate {
     public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if result.isCancelled {
-            showAlert(withMessage: "Login failed")
+            UIHelper.showAlert(withMessage: "Login failed", inViewController: self)
         } else {
-            showAlert(withMessage: "Login successful!")
+            UIHelper.showAlert(withMessage: "Login successful!", inViewController: self)
         }
     }
     
     public func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("logged out")
+    }
+}
+
+//MARK: RegisterVC Delegate
+extension LoginViewController: RegisterViewControllerDelegate {
+    func didRegisterAccount(withUsername username: String, andPassword password: String) {
+        <#code#>
     }
 }
