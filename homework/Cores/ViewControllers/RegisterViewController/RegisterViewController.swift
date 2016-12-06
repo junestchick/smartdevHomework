@@ -38,9 +38,10 @@ class RegisterViewController: UIViewController {
     @IBAction func createAccountAction() {
         dismissKeyboard()
         if isValidLoginInformation() {
-            
+            _ = self.navigationController?.popViewController(animated: true)
+            self.delegate?.didRegisterAccount(withUsername:usernameTextfield.text!, andPassword:passwordTextField.text!)
         } else {
-            UIHelper.showAlert(withMessage: "Login failed.", inViewController: self)
+            UIHelper.showAlert(withMessage: "Register failed, incorrect input.", inViewController: self)
         }
     }
     
@@ -53,7 +54,7 @@ class RegisterViewController: UIViewController {
     
     fileprivate func isValidLoginInformation() -> Bool {
         //Just check if email field is valid, username, password
-        //fullname and phone feilds are empty or not
+        //fullname and phone fields are empty or not
         guard let username = usernameTextfield.text else { return false }
         guard let password = passwordTextField.text else { return false }
         guard let fullName = fullNameTextField.text else { return false }

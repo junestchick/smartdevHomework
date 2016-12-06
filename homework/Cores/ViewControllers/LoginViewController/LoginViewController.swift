@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
     @IBAction func registerAction() {
         dismissKeyboard()
         let registerVC = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        registerVC.delegate = self
         self.navigationController?.pushViewController(registerVC, animated: true)
     }
     
@@ -91,6 +92,11 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
 //MARK: RegisterVC Delegate
 extension LoginViewController: RegisterViewControllerDelegate {
     func didRegisterAccount(withUsername username: String, andPassword password: String) {
-        <#code#>
+        usernameTextfield.text = username
+        passwordTextField.text = password
+        //Delay 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.loginAction()
+        }
     }
 }
